@@ -53,6 +53,10 @@ Målet med laborationen var att skapa en lead-lag regulator som skulle klara av 
 
 För att uppnå dessa krav behöver vi ta fram konstanter för en lead-länk och en lag-länk.
 
+\subsection{Krav}
+
+Utifrån våra krav kan vi ta fram olika egenskaper som vi kräver av vårt system. Kravet på en översläng som är mindre än $10\%$ kan översättas till att det krävs en fasmarginal på ungufär 58\% enligt  Figur 5.11 på sidan 104 i "Reglerteknik Grundläggande teori" av Torkel Glad och Lennart Ljung. Vi vill då ha fasmarginal $\phi_m$
+
 \section{Laborationen}
 
 Vårt system har överföringsfunktionen $G(s)$
