@@ -27,41 +27,39 @@ Anton Silfver\\
 
 \maketitle
 
-\section{Introduction}
+\section{Introduktion}
 
-I denna laboration så undersökte vi reglering utav två seriekopplade vattentankar där utflödet från den första tanken blir inflödet i den andra tanken. Vi pumpar vatten in i den första tanken och undersöker hur vattennivån hos tankarna beter sig för olika egenskaper. Vi tar också fram en regulator som låter oss gå från en vatten nivå i den nedre tanken till en annan, ett enhetssteg.
+I denna laboration så undersökte vi reglering utav två seriekopplade vattentankar där utflödet från den första tanken blir inflödet i den andra tanken. Vi pumpar vatten in i den första tanken och undersöker hur vattennivån hos tankarna beter sig för olika egenskaper. Vi tar också fram en regulator som låter oss gå från en vatten nivå i den nedre tanken till en annan, det vill säga ett enhetssteg.
 
 \section{Systembeskrivning}
 
 För att kunna skapa en regulator till systemet behöver vi först beskriva det. Vi kan betrakta systemet som två kaskadkopplade system där det första systemet är den övre tanken och det andra systemet den nedre tanken.
 
-Vi kan nu beskriva insignalen till det första systemet $u_1$ denna signal definerar vi som spänningen till en elektrisk pump som pumpar in vatten i den första tanken. Insignalen är dvs inte definerad som den mängd vatten som pumpas in. Vi kan beskriva utsignalen från det första systemet som vattennivån i tanken mätt i centimeter $y_1$. Vi kan också definera det som rinner ut ur den övre tanken och in i den nedre tanken som $v_1$, detta blir samma signal som insignalen till system två $u_1$. Slutligen har vi utsignalen för det andra systemet blir liksom det första systemet vattennivån mätt i centimeter i tank 2 $y_2$.
+Vi kan börja med att beskriva insignalen till det första systemet $u_1$ denna signal definerar vi som spänningen till en elektrisk pump som pumpar in vatten i den första tanken. Insignalen är alltså inte definerad som den mängd vatten som pumpas in. Vi kan beskriva utsignalen från det första systemet som vattennivån i tanken mätt i centimeter $y_1$. Vi kan också definera det som rinner ut ur den övre tanken och in i den nedre tanken som $v_1$, detta blir samma signal som insignalen till system två $u_1$. Slutligen har vi utsignalen för det andra systemet. Det blir likt i det första systemet vattennivån mätt i centimeter, i tank 2 $y_2$.
 
-Vårt slutliga kaskadkopplade system har insignalen $u_1$ och utsignalen $y_2$
-
-Systemet är linjäriserat
+Vårt slutliga kaskadkopplade system har insignalen $u_1$ och utsignalen $y_2$. Systemet är linjäriserat
 
 \section{Mål}
 
-Målet med laborationen var att skapa en lead-lag regulator som skulle klara av att höjja nivån i den nedre tanken från 10 till 11 cm med kraven.
+Målet med laborationen var att skapa en lead-lag regulator som skulle klara av att höja nivån i den nedre tanken från 10 till 11 cm med de följande kraven angivna i laborationsanvisningarna.
 
 1: Systemet ska ha en stigtid $T_r$ på mindre än 5 sekunder
 
-2: Systemet ska ha en översläng $M$ som är mindre än 10%
+2: Systemet ska ha en översläng $M$ som är mindre än 10\%
 
-3: Systemet ska ha ett stationärt fel $e_0$ på mindre än 5%
+3: Systemet ska ha ett stationärt fel $e_0$ på mindre än 5\%
 
 För att uppnå dessa krav behöver vi ta fram konstanter för en lead-länk och en lag-länk.
 
 \section{Laborationen}
 
-Vårt system har överföringsfunktionen $G(s)$
+Vårt system kan tolkas genom överföringsfunktionen $G(s)$
 
 \begin{equation}
 G(s) = K_{dubbel}/(sT +1)^2
 \end{equation}
 Biman Roy
-För att ta fram värdet på $T$ så mäter vi tiden det tar för systemet att stiga till 63\% av det väntade värdet. Detta gör vi genom att testa för vilken spänning nivån i tanken lägger sig på 10cm, vi börjar sedan från noll och slår på systemet med den spänningen och mäter tiden det tar för nivån att nå 6,3 centimeter.
+För att ta fram värdet på $T$ så mäter vi tiden det tar för systemet att stiga till 63\% av det väntade värdet som vi utgår ifrån. Detta gör vi genom att först manuellt testa oss fram för vilken spänning nivån i tanken lägger sig på 10 cm. Därefter tömmer vi systemet igen och mäter den tiden det tar för systemet att nå 6,3 cm med den spänningen vi kom fram till. 
 
 Detta kan vi göra för att
 
@@ -71,11 +69,11 @@ H(s) = G(s)U(s) \leftrightarrow h(t) = L^-1\{G(s)U(s)\}
 
 Där $U(s) = c/s$ och $G(s) = K_{enkel}/(sT + 1)$ Vilket ger $h(t) = K_enkel * c * (1-e^-(t/T)) \approx 0.63$ För $t=T$.
 
-Vi kan se att då $t = T$ så kommer utsignalen från vår övre tank vara runt 63\% av värdet den svänger in på då vi kör ett enhetssteg. Då vi gjorde detta kunde vi mäta $T = 26$
+Vi kan se att då $t = T$ så kommer utsignalen från vår övre tank vara runt 63\% av värdet den svänger in på då vi kör ett enhetssteg. Då vi gjorde detta kunde vi mäta $T = 26$.
 
 Detta är samma T som vi får i vår dubbeltank, vi kan nu ta fram $K_{dubbel}$ genom att mäta spänningen som gör så att att vattennivån i den nedre tanken når nivån systemet normaliserats kring vilket är 10 cm. För vårt system krävdes en insignal på $1,31V$.
 
-vi kan se att $\lim_{t \rightarrow \inf}(g(t)) = \lim_{s \rightarrow 0}(G(s))$ för vårt system. Detta betyder att då systemet stabiliserar sig på en nivå med en konstant insignal så får vi $G(s) = c K_{dubbel}$. Om vi stoppar in våra siffror får vi $10 = 1,31 K_{dubbel} \leftrightarrow K_{dubbel} = 7,63$
+Vi kan se att $\lim_{t \rightarrow \inf}(g(t)) = \lim_{s \rightarrow 0}(G(s))$ för vårt system. Detta betyder att då systemet stabiliserar sig på en nivå med en konstant insignal så får vi $G(s) = c K_{dubbel}$. Om vi stoppar in våra siffror får vi $10 = 1,31 K_{dubbel} \leftrightarrow K_{dubbel} = 7,63$
 
 Vår lead-länk $F_lead$ har formen
 
